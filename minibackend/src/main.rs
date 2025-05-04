@@ -25,6 +25,7 @@ async fn main() -> std::io::Result<()> {
     HttpServer::new(|| App::new()
         .service(get_pizzas)
         .service(buy_pizza)
+        .service(update_pizza)
         )
 
         .bind("127.0.0.1:8080")?

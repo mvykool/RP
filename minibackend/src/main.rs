@@ -1,7 +1,7 @@
-use actix_web::{get, post, patch, web::Json, App, HttpResponse, HttpServer, Responder};
+use actix_web::{web::Path, get, post, patch, web::Json, App, HttpResponse, HttpServer, Responder};
 mod models;
 use validator::Validate;
-use crate::models::pizza::BuyRequest;
+use crate::models::pizza::{BuyRequest, UpdatePizza};
 
 //after importing methods
 //use get macro
@@ -24,8 +24,9 @@ async fn buy_pizza(body: Json<BuyRequest>) -> impl Responder {
 }
 
 #[patch("/update/{uuid}")]
-async fn update_pizza() -> impl Responder {
-    HttpResponse::Ok().body("pizza was updated")
+async fn update_pizza(update_pizza: Path<UpdatePizza>) -> impl Responder {
+    let uuid = update_pizza.into_inner().uuid;
+    HttpResponse::Ok().body(format!("pizza was updated: {uuid}"))
 }
 
 //main macro, creating entry to the program

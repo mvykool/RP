@@ -22,3 +22,9 @@ fn app(){               //not valid here, it has not been declared
     let s = "hello";    //s is valid from this point forward
     // -- do something  
 }                       //scope ends here, so s is no longer valid
+
+let mut string = String::from("hello");
+
+string.push_str(", world"); //push_str() appnds a literal to a string
+
+println!("{string}") //this will output hello, world

@@ -49,3 +49,17 @@ string.push_str(", world"); //push_str() appnds a literal to a string
 
 println!("{string}") //this will output hello, world
 
+// some examples of what happens
+fn example() {
+    let x: i32 = 5;
+    let y: i32 = s1; // this will return 5, its a copy
+
+    let s1: String = String::from("this is a string"); 
+    let s2: String = s1; //this is NOT a copy, Rust by default moves the pointer to s2, as it would
+                         //be too expesive to create a whole new dynamic data and store it in heap
+                         //rust allocates and deallocates memory from heap automatically, at block
+                         //scrope, it will be dropped when the {} ends
+                         //
+    let s2: String = s1.clone(); // this is an actual copy, by default it moves, but if we want the
+                                 // a more memory expesive method, we can by using clone
+}

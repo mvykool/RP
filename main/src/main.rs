@@ -17,19 +17,6 @@ fn main(){
 // * there can be only one owner
 // * once the owner goes out of scope, the value will be dropped
 
-
-fn app(){               //not valid here, it has not been declared
-    let s = "hello";    //s is valid from this point forward
-    // -- do something  
-}                       //scope ends here, so s is no longer valid
-
-let mut string = String::from("hello");
-
-string.push_str(", world"); //push_str() appnds a literal to a string
-
-println!("{string}") //this will output hello, world
-
-
 // ownership examples
 
 //way to manage memory 
@@ -49,3 +36,16 @@ fn ownership(){
         let x: String = String::from("World")
     }
 }
+
+
+fn app(){               //not valid here, it has not been declared
+    let s = "hello";    //s is valid from this point forward
+    // -- do something  
+}                       //scope ends here, so s is no longer valid
+
+let mut string = String::from("hello");
+
+string.push_str(", world"); //push_str() appnds a literal to a string
+
+println!("{string}") //this will output hello, world
+

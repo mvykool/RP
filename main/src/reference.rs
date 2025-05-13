@@ -18,3 +18,16 @@ fn calculate_length(s: &String) -> unsize { //for the type String, we also pass 
     let length: unsize = s.len();
     length
 }
+
+
+// as mentioned references are by definition inmutable, but what if we want to mutate it??
+// in that case we pass a mutable reference, and make the function take a mutable reference
+
+fn main_mutable(){
+    let mut s1: String = String::from("hello"); // first we have to make the variable muttable
+    change_string(&mut s1); // this is how we pass a mutable variable
+}
+
+fn change_string(string: &mut String){ //this is how we pass a mutable variable 
+    string.push_str(", world"); //now we can modify its value
+}

@@ -30,3 +30,22 @@ string.push_str(", world"); //push_str() appnds a literal to a string
 println!("{string}") //this will output hello, world
 
 
+// ownership examples
+
+//way to manage memory 
+// other solutions: 
+// garbage collector
+// memory management model: memory allocation
+// ownership unique rust way of doing things
+
+fn ownership(){
+    fn a(){
+        let x: &str = 'hello';
+        let y: i32 = 22;
+        b();
+    }
+
+    fn b(){
+        let x: String = String::from("World")
+    }
+}

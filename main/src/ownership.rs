@@ -30,6 +30,22 @@ fn main_copy(){
                        //regular variables, sizable data types are copied
 }
 
-fn takes_ownership_copy(number_parameter: i32){
-    println!("{}", number_parameter);
+fn takes_ownership_copy(integer_parameter: i32){
+    println!("{}", integer_parameter);
 }
+
+// Giving ownership example
+fn main_give_ownership(){
+    let s1: String = gives_ownership(); //this is a function that returns a String, and moves it to
+                                        //the s1 variable, when its called, it returns it, instead
+                                        //of dropping it, moving it to s1, which now can be called
+    println!("{}", s1);
+}
+
+fn gives_ownership() -> String {
+    let some_string: String = String::from("hello");
+
+    some_string
+}
+
+//taking and giving ownership

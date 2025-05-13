@@ -49,3 +49,29 @@ fn gives_ownership() -> String {
 }
 
 //taking and giving ownership
+
+//this is an example of how we can take, and give back ownership
+fn takes_and_gives_back_main() {
+    let s1: String = gives_ownership(); //just like the example above, it calls gives_ownership,
+                                        //and moved the value from gives_ownership to s1 
+    let s2: String = String::from("world"); // declares variable
+                                            //
+    let s3: String = takes_and_gives_back(s2); // now this is the tricky part, here i'm moving s2
+                                               // to takes_and_gives_back, but the function returns
+                                               // a string, so it moves the value back to s3, first
+                                               // owner is s2, then takes_and_gives_back, making it
+                                               // a_string, then moves it to s3, which means we can
+                                               // use it in this function
+                                               //
+    println!("s1 = {}, s3 = {}", s1, s3);   // output should be "s1 = hello, s3 = world"
+}
+
+fn gives_ownership() -> String {
+    let some_string: String = String::from("hello");
+
+    some_string
+}
+
+fn takes_and_gives_back(a_string: String) -> String {
+    a_string
+}

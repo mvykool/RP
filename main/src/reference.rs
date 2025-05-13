@@ -31,3 +31,21 @@ fn main_mutable(){
 fn change_string(string: &mut String){ //this is how we pass a mutable variable 
     string.push_str(", world"); //now we can modify its value
 }
+
+// we cannot have more than one mutable reference of a value whitin the same scope, and also
+// we cannot have mutable reference, if there an inmutable reference already
+// however, we can have many inmutable references. However, we can use mutable reference if all the
+// other inmutable references are out of scope 
+
+fn main_ref(){
+    let mut s: String = String::from("hello");
+
+    let r1: &String = &s;
+    let r2: &String = &s;
+
+    println!("{}, {}", r1, r2); // as we can see r1, and r2 are inmutable references, and their
+                                // scope ends here, after the println line, which means once they
+                                // are out of scope, we can use a mutable reference
+    let r3: &mut String = &mut s;
+    println!("{}", r3);
+}

@@ -3,7 +3,6 @@ mod models;
 use validator::Validate;
 use crate::models::pizza::{BuyRequest, UpdatePizza};
 
-//after importing methods
 //use get macro
 #[get("/pizzas")]
 async fn get_pizzas() -> impl Responder {

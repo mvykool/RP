@@ -78,4 +78,16 @@ fn two_instances(){
     };
 }
 
+// tuple structs
+//
+// similar to tuples, added meaning the struct name provides but don't have names associated with
+// their fields; rather, they just have the types of the fields. Useful when you want to give the
+// whole tuple a name, and make the tuple different type from others
+//
+struct Color(i32, i32, i32);
+struct Point(i32, i32, i32);
 
+fn main(){
+    let black = Color(0,0,0);
+    let origin = Point(0,0,0);
+}

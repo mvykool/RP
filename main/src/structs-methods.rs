@@ -33,3 +33,25 @@ fn main(){
         rect1.area()
     );
 }
+
+// creating associated functions, they are associated with the tupe named after the impl
+// we can define associated functions that don't have self as their first parameter (thus theyre no
+// methods), becayse they dont need an instance of the type to work with.
+//
+// functions that arent methods are often used for constructors that will return a new instance of
+// the struct.
+//
+impl Rectangle {
+    fn square(size: u32) -> Self {
+        Self{
+            width: size,
+            height: size
+        }
+    }
+}
+
+// Self keyword in the return type and in the body of the functions are alliases for the type that
+// appears after the impl keyword, which in this case is Rectangle
+//
+// to call this associated function we use the :: syntax with the struct name like this:
+// `let sq = Rectangle::square(3);`

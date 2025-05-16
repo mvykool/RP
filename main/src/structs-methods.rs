@@ -16,6 +16,9 @@ struct Rectangle {
 // implementation, extending the struct, and adding a method to it, which is just a function inside
 // of a struct lol, always using self, which is the representation of the instance, kind of like
 // `this` in JS
+//
+// we can have multiple impl blocks, and not just one with a bunch of methods in it, but it depends
+// how we want to structre our code
 impl Rectangle {
     fn area(&self) -> u32 {
         self.width * self.height
@@ -54,4 +57,5 @@ impl Rectangle {
 // appears after the impl keyword, which in this case is Rectangle
 //
 // to call this associated function we use the :: syntax with the struct name like this:
-// `let sq = Rectangle::square(3);`
+let sq = Rectangle::square(3);
+

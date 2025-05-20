@@ -2,8 +2,9 @@
 //
 mod back_of_house {
 
+    // structs have to be public, as well as their fields
     pub struct Breakfast {
-        toast: String,
+        pub toast: String,
         seasonal_fruit: String,
     }
 
@@ -15,4 +16,10 @@ mod back_of_house {
             }
         }
     }
+}
+
+pub fn eat_at_restaurant() {
+    let mut meal: Breakfast = back_of_house::Breakfast::summer("rye");
+
+    meal.toast = String::from("Wheat");
 }

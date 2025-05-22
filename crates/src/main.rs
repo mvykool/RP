@@ -21,5 +21,5 @@ mod back_of_house {
 pub fn eat_at_restaurant() {
     let mut meal: Breakfast = back_of_house::Breakfast::summer("rye");
 
-    meal.toast = String::from("Wheat");
+    meal.toast = String::from("somehting else");
 }

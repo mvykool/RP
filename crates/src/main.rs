@@ -58,6 +58,6 @@ use self::front_of_house::hosting;
 // and clarify is not local
 // we can also rename things using "as"
 use std::fmt::Result;
-//like so
+//like s
 use std::io::Result as IoResult;
 

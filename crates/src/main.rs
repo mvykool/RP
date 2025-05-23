@@ -23,3 +23,21 @@ pub fn eat_at_restaurant() {
 
     meal.toast = String::from("somehting else");
 }
+
+// using enums
+//
+// enums, unlike structs, we dont have to specify if their fields are private or public
+//
+mod back_of_house {
+
+    //create public enum
+    pub enum Appetizer {
+        Soup,
+        Salad,
+    }
+}
+
+pub fn eat_at_restaurant() {
+    let order1: Appetizer = back_of_house::Appetizer::Soup;
+    let order2: Appetizer = back_of_house::Appetizer::Salad;
+}

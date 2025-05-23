@@ -51,9 +51,13 @@ hosting::Soup; //or salad
 // we can also use self
 use self::front_of_house::hosting;
 // functions, modules, traits, structs, enums, etc
-// when bringing modules, and functions the idiomatic path should bring the parent function
+// when bringing modules, and functions the idiomatic path should bring the parent module
 // however, when bringing things like enums, traits, structs, its better to put the whole path
 // the only exception is when you are bringing two enums, with the same name, in that case 
-// its better to bring the parent function, we have a context to where it belongs 
+// its better to bring the parent module, we have a context to where it belongs 
 // and clarify is not local
+// we can also rename things using "as"
+use std::fmt::Result;
+//like so
+use std::io::Result as IoResult;
 

@@ -20,6 +20,13 @@ crate
         |__take_payment
  */
 
+
+
+//n now here we are bringing hosting, by bringing front of house,
+//create a file with the name of this module, then a folder, with the same name, and the funciton
+// create a file with the name of the function
+mod front_of_house;
+
 mod front_of_house {
     mod hosting {
         fn add_to_waitlist(){}
